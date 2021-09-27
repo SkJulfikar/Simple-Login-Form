@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sidenav design</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="box">
+        <form action=""  method="POST" >            
+            <h1>Login</h1>
+           
+                <input id="uname"  type="text" name="name" placeholder="Enter Username">
+                <input id= "pass"  type="password" name="password" placeholder="Enter Password">
+            
+            <input type="submit" value="login" onclick ="return validateForm()"  >
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var uname = document.getElementById("uname");
+            var pass = document.getElementById("pass");
+
+               
+               if (uname.value.trim() == "" && pass.value.trim() =="") {
+                   alert("Username & Password Must Be Filled")
+               } else if (uname.value.trim() == "") {
+                    alert ('Username Must Be Entered ') ;
+                    return false;
+                } else if (pass.value.trim() == "") {
+                        alert('Password Must Be Entered');
+                        return false;
+                } else if (pass.value.length <= 6 ) {
+                        alert('Password Must Be More Than Six Character');
+                        return false;
+                } else {
+                    return true;
+                }
+  
+        }    
+    </script>
+
+
+</body>
+</html>
